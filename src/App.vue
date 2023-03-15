@@ -1,6 +1,7 @@
 <script>
+import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
-const apiUrl = 'http://localhost:8000';
+const apiBaseUrl = 'http://localhost:8000/api';
 export default {
   name: 'App',
   components: { AppHeader },
@@ -9,8 +10,13 @@ export default {
   }),
   methods: {
     fetchProjects() {
-      axios.get('')
+      axios.get(apiBaseUrl + '/projects').then(res => {
+        console.log(res.data)
+      });
     }
+  },
+  created() {
+    this.fetchProjects();
   }
 };
 </script>
