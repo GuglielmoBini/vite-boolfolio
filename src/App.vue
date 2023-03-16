@@ -1,32 +1,15 @@
 <script>
-import axios from 'axios';
+import HomePage from './pages/HomePage.vue';
 import AppHeader from './components/AppHeader.vue';
-import ProjectsList from './components/projects/ProjectsList.vue'
-const apiBaseUrl = 'http://localhost:8000/api';
 export default {
   name: 'App',
-  components: { AppHeader, ProjectsList },
-  data: () => ({
-    projects: []
-  }),
-  methods: {
-    fetchProjects() {
-      axios.get(apiBaseUrl + '/projects').then(res => {
-        this.projects = res.data;
-      });
-    }
-  },
-  created() {
-    this.fetchProjects();
-  }
+  components: { AppHeader, HomePage },
 };
 </script>
 
 <template>
   <app-header></app-header>
-  <main class="container">
-    <projects-list :projects="projects"></projects-list>
-  </main>
+  <home-page></home-page>
 </template>
 
 <style></style>
