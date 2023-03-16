@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 // importo le pagine che voglio usare
 import HomePage from "../pages/HomePage.vue";
-import PostDetailsPage from "../pages/PostDetailsPage.vue";
+import ProjectDetailsPage from "../pages/ProjectDetailsPage.vue";
 import NotFoundPage from "../pages/NotFoundPage.vue";
 
 //definisco il router e le rotte
@@ -12,8 +12,12 @@ const router = createRouter({
   linkExactActiveClass: "active",
   routes: [
     { path: "/", name: "home", component: HomePage },
-    { path: "/projects/:id", name: "show", component: PostDetailsPage },
-    { path: "/:pathMatch(.*)*", component: NotFoundPage },
+    {
+      path: "/projects/:id",
+      name: "project-details",
+      component: ProjectDetailsPage,
+    },
+    { path: "/:pathMatch(.*)*", name: "not-found", component: NotFoundPage },
   ],
 });
 

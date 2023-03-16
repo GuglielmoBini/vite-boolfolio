@@ -7,7 +7,7 @@ export default {
 <template>
     <div class="d-flex flex-column align-items-center justify-content-center">
         <h1>404 | Not Found</h1>
-        <router-link class="btn btn-danger mt-3" to='/'>Indietro</router-link>
+        <router-link class="btn btn-danger mt-3" :to="{ name: 'home' }">Torna alla Home</router-link>
     </div>
 </template>
 

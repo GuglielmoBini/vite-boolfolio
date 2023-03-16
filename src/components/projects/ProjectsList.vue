@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-    <section id="projects-list" class="my-4">
+    <section id="projects-list">
         <div v-if="projects.length">
             <project-card v-for="project in projects" :key="project.id" :project="project"></project-card>
         </div>

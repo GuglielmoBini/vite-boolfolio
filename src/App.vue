@@ -1,5 +1,4 @@
 <script>
-
 import AppHeader from './components/AppHeader.vue';
 export default {
   name: 'App',
@@ -10,7 +9,7 @@ export default {
 <template>
   <app-header></app-header>
   <main class="container">
-    <router-view></router-view>
+    <RouterView />
   </main>
 </template>
 
