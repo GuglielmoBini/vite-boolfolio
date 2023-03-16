@@ -22,9 +22,7 @@ export default {
 </script>
 
 <template>
-    <main class="container">
-        <projects-list :projects="projects"></projects-list>
-    </main>
+    <projects-list :projects="projects"></projects-list>
 </template>
 
 <style></style>
