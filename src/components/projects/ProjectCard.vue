@@ -47,6 +47,8 @@ export default {
                         <div class="card-body border-top d-flex align-items-center justify-content-around">
                             <a :href='project.project_url'>Project link</a>
                             <a v-if="(project.image_url)" :href='project.image_url'>Image URL</a>
+                            <router-link class="btn btn-success"
+                                :to="{ name: 'show', params: { id: project.id } }">Dettaglio</router-link>
                         </div>
                     </div>
                 </div>
