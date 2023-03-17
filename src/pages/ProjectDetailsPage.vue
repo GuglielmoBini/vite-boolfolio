@@ -7,14 +7,18 @@ export default {
     components: { ProjectCard },
     data: () => ({
         project: null,
+        isLoading: false
     }),
     methods: {
         getProject() {
+            this.isLoading = true
             const endpoint = apiBaseUrl + 'projects/' + this.$route.params.id;
             axios.get(endpoint).then(res => {
                 this.project = res.data;
             }).catch(() => {
                 this.$router.push({ name: 'not-found' });
+            }).then(() => {
+                this.isLoading = false
             });
         }
     },
@@ -25,7 +29,8 @@ export default {
 </script>
 
 <template>
-    <ProjectCard v-if="project" :project="project" :isDetail="true" />
+    <AppLoader v-if="isLoading" />
+    <ProjectCard v-if="!isLoading && project" :project="project" :isDetail="true" />
 </template>
 
 <style></style>
