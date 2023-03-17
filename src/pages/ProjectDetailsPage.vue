@@ -25,7 +25,7 @@ export default {
 </script>
 
 <template>
-    <ProjectCard :project="project" :isDetail="true" />
+    <ProjectCard v-if="project" :project="project" :isDetail="true" />
 </template>
 
 <style></style>
