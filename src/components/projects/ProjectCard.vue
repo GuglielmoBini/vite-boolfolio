@@ -7,7 +7,7 @@ export default {
             const date = new Date(this.project.created_at);
             let day = date.getDay();
             let month = date.getMonth();
-            const year = date.getYear();
+            const year = date.getFullYear();
             const hours = date.getHours();
             let minutes = date.getMinutes();
 
@@ -16,6 +16,10 @@ export default {
             if (minutes < 10) minutes = '0' + minutes;
 
             return `${day}/${month}/${year} - ${hours}:${minutes}`;
+        },
+
+        abstract() {
+            return this.project.description.slice(0, 249) + '...';
         }
     }
 }
@@ -36,7 +40,8 @@ export default {
                                 <router-link v-if="!isDetail" class="btn btn-outline-primary"
                                     :to="{ name: 'project-details', params: { id: project.id } }">Dettagli</router-link>
                             </div>
-                            <p class="card-text flex-grow-1">{{ project.description }}</p>
+                            <p v-if="!isDetail" class="card-text flex-grow-1">{{ abstract }}</p>
+                            <p v-else class="card-text flex-grow-1">{{ project.description }}</p>
                             <p class="card-text">
                                 <small class="text-muted">
                                     <strong>Created: </strong>{{ projectDate }}
