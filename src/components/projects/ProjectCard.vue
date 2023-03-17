@@ -46,6 +46,7 @@ export default {
                         </div>
                         <div class="card-body border-top d-flex align-items-center justify-content-around">
                             <a :href='project.project_url'>Project link</a>
+                            <a v-if="project.image_url" :href='project.image_url'>Image URL</a>
                             <router-link v-if="!isDetail" class="btn btn-warning"
                                 :to="{ name: 'project-details', params: { id: project.id } }">Dettagli</router-link>
                         </div>
@@ -53,7 +54,6 @@ export default {
                 </div>
             </div>
         </div>
-
     </div>
 </template>
 

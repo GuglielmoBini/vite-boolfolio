@@ -12,7 +12,7 @@ export default {
         <div v-if="projects.length">
             <project-card v-for="project in projects" :key="project.id" :project="project"></project-card>
         </div>
-        <h3 v-else class="text-center">Non ci sono Progetti!</h3>
+        <h3 v-else class="text-center my-5">Non ci sono Progetti!</h3>
     </section>
 </template>
 
