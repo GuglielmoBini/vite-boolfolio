@@ -44,7 +44,12 @@ export default {
                             <p v-else class="card-text flex-grow-1">{{ project.description }}</p>
                             <p class="card-text">
                                 <small class="text-muted">
-                                    <strong>Created: </strong>{{ projectDate }}
+                                    <strong>Created: </strong>{{ project.created_at }}
+                                </small>
+                            </p>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    <strong>Updated at: </strong>{{ project.updated_at }}
                                 </small>
                             </p>
                             <p v-if="project.type" class="card-text">
